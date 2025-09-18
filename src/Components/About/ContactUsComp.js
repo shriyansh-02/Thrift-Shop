@@ -63,4 +63,27 @@ function ContactUs() {
           name="name"
           placeholder="Your Name"
           required
-          className="fo
+          className="formInput"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          className="formInput"
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          required
+          className="formTextarea"
+        />
+        <button type="submit" className="formButton">
+          Send
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default ContactUs;
