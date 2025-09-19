@@ -65,6 +65,7 @@ function ContactUs() {
           required
           className="formInput"
         />
+        <br></br>
         <input
           type="email"
           name="email"
@@ -72,12 +73,13 @@ function ContactUs() {
           required
           className="formInput"
         />
+        <br></br>
         <textarea
           name="message"
           placeholder="Your Message"
           required
           className="formTextarea"
-        />
+        /><br></br>
         <button type="submit" className="formButton">
           Send
         </button>
