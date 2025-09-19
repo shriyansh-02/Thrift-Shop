@@ -40,7 +40,7 @@ const Create = () => {
       });
   };
   return (
-    <Fragment>
+    <>
       <Header />
     { loading && <GoLoading/> }
       <div className="centerDiv">
@@ -117,7 +117,7 @@ const Create = () => {
           Upload
         </button>
       </div> 
-    </Fragment>
+    </>
   );
 };
 
