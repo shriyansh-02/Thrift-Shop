@@ -8,17 +8,18 @@ function ContactUs() {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",   // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID",  // Replace with your EmailJS template ID
+        "service_oh2g3gk",     // ✅ Your EmailJS Service ID
+        "template_06mtzou",   // ✅ Your EmailJS Template ID
         e.target,
-        "YOUR_PUBLIC_KEY"    // Replace with your EmailJS public key
+        "CowCb-99DKhsGaafX"   // ✅ Your EmailJS Public Key
       )
       .then(
         (result) => {
-          alert("Message sent successfully!");
+          alert("✅ Message sent successfully!");
+          e.target.reset(); // clear form after send
         },
         (error) => {
-          alert("Oops! Something went wrong, please try again later.");
+          alert("❌ Oops! Something went wrong, please try again later.");
         }
       );
   }
@@ -60,26 +61,31 @@ function ContactUs() {
       <form onSubmit={sendEmail} className="contactForm">
         <input
           type="text"
-          name="name"
+          name="name"        // ✅ matches {{name}} in your EmailJS template
           placeholder="Your Name"
           required
           className="formInput"
         />
+        <br />
         <br></br>
         <input
           type="email"
-          name="email"
+          name="email"       // ✅ matches {{email}} in your EmailJS template
           placeholder="Your Email"
           required
           className="formInput"
         />
         <br></br>
+        <br />
         <textarea
-          name="message"
+          name="message"     // ✅ matches {{message}} in your EmailJS template
           placeholder="Your Message"
           required
           className="formTextarea"
-        /><br></br>
+        />
+        <br />
+        <br></br>
+
         <button type="submit" className="formButton">
           Send
         </button>
