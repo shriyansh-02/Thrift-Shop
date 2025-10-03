@@ -1,5 +1,5 @@
 # ⚛️ Thrift Shop
-Welcome to the Thrift Shop Web Application! This web application is designed to provide a platform for users to buy and sell second-hand items easily.
+Welcome to the Thrift Shop Web Application! This web application is designed to provide a platform for users to buy and sell premium second-hand items easily.
 
 ## Features
 
