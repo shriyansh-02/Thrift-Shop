@@ -1,13 +1,14 @@
+javascript
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User'); 
+const User = require('../models/User');
 
-// POST: Signup / Register
-router.post('/signup', async (req, res) => {
+// Function to handle both /signup and /register
+const handleRegister = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, phone, password } = req.body;
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
@@ -17,14 +18,18 @@ router.post('/signup', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 12);
 
     // Save the new user
-    const newUser = new User({ name, email, password: hashedPassword });
+    const newUser = new User({ name, email, phone, password: hashedPassword });
     await newUser.save();
 
-    res.status(201).json({ message: 'User created successfully' });
+    res.status(201).json({ message: 'User created successfully', user: newUser });
   } catch (error) {
     res.status(500).json({ message: 'Something went wrong', error: error.message });
   }
-});
+};
+
+// Listen to BOTH /signup and /register so it never gives a 404!
+router.post('/signup', handleRegister);
+router.post('/register', handleRegister);
 
 // POST: Login
 router.post('/login', async (req, res) => {
@@ -39,10 +44,14 @@ router.post('/login', async (req, res) => {
     const isPasswordCorrect = await bcrypt.compare(password, user.password);
     if (!isPasswordCorrect) return res.status(400).json({ message: 'Invalid credentials' });
 
-    // Generate a token (We will use a secret key from the .env file later)
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || 'testsecret123', { expiresIn: '1h' });
+    // Generate a token
+    const token = jwt.sign(
+      { id: user._id },
+      process.env.JWT_SECRET || 'testsecret123',
+      { expiresIn: '1h' }
+    );
 
-    res.status(200).json({ result: user, token });
+    res.status(200).json({ result: user, user: user, token });
   } catch (error) {
     res.status(500).json({ message: 'Something went wrong', error: error.message });
   }
