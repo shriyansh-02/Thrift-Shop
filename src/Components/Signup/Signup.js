@@ -20,7 +20,7 @@ export default function Signup() {
 
     try {
       // Send the user data to our new Node backend
-      const response = await axios.post("http://localhost:5000/api/auth/signup", {
+      const response = await axios.post("https://thrift-shop-backend-532l.onrender.com", {
         name: name,
         email: email,
         password: password

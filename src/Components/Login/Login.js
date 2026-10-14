@@ -11,7 +11,7 @@ function Login() {
     e.preventDefault(); // Prevents the page from refreshing when you submit
     
     // Sends the email and password to your Node.js server
-    axios.post('http://localhost:5000/api/auth/login', { email, password })
+    axios.post('https://thrift-shop-backend-532l.onrender.com', { email, password })
       .then((response) => {
         // Save the token and user data to the browser's local storage
         localStorage.setItem('token', response.data.token);

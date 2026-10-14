@@ -81,7 +81,7 @@ function View() {
       const updatedFields = {
         title: editTitle, price: Number(editPrice), category: editCategory, subCategory: editSubCategory, condition: editCondition, location: editLocation, sellerPhone: editPhone, description: editDescription, sellerName: post.sellerName && post.sellerName !== 'Thrift Shop Seller' ? post.sellerName : (currentUser?.name || 'Thrift Shop Seller')
       };
-      const response = await axios.put(`http://localhost:5000/api/posts/${post._id}`, updatedFields);
+      const response = await axios.put(`https://thrift-shop-backend-532l.onrender.com/${post._id}`, updatedFields);
       const updatedPostData = response.data || { ...post, ...updatedFields };
       setPost(updatedPostData);
       localStorage.setItem('selectedPost', JSON.stringify(updatedPostData));

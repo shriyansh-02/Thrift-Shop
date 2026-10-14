@@ -69,7 +69,7 @@ const Create = () => {
         sellerPhone
       };
 
-      await axios.post("http://localhost:5000/api/posts", postData, {
+      await axios.post("https://thrift-shop-backend-532l.onrender.com", postData, {
         headers: { Authorization: token ? `Bearer ${token}` : "" }
       });
 

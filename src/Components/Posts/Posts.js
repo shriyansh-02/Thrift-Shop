@@ -36,7 +36,7 @@ function Posts({ searchQuery = "", selectedCategory = "ALL", showMyAds = false, 
     e.stopPropagation();
     if (!window.confirm("Remove this listing?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/posts/${postId}`);
+      await axios.delete(`https://thrift-shop-backend-532l.onrender.com/${postId}`);
       setPosts((prevPosts) => prevPosts.filter((post) => post._id !== postId));
     } catch (error) {
       console.error('Error deleting post:', error);
