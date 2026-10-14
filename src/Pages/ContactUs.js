@@ -11,8 +11,8 @@ function ContactUs() {
         <p>Need assistance? We are here to help!</p>
         <div style={{ backgroundColor: '#f8f9fa', padding: '20px', borderRadius: '8px', marginTop: '20px' }}>
           <p><strong>📍 Office Address:</strong> Thrift Shop HQ, Kanpur, Uttar Pradesh, India</p>
-          <p><strong>📧 Email:</strong> support@thriftshop.in</p>
-          <p><strong>📞 Phone:</strong> +91 98765 43210</p>
+          <p><strong>📧 Email:</strong> shriyanshsingh352@gmail.com</p>
+          <p><strong>📞 Phone:</strong> +91 8840443486</p>
           <p><strong>🕒 Business Hours:</strong> Monday - Saturday (9:00 AM - 6:00 PM)</p>
         </div>
       </div>
