@@ -16,7 +16,7 @@ const Signup = () => {
     setLoading(true);
     try {
       // Note: Update this endpoint if your backend URL is different
-      await axios.post("http://localhost:5000/api/users/register", {
+      await axios.post("https://thrift-shop-backend-532l.onrender.com/api/users/register", {
         name,
         email,
         phone,

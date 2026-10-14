@@ -14,7 +14,7 @@ const Login = () => {
     setLoading(true);
     try {
       // Note: Update this endpoint if your backend URL is different
-      const response = await axios.post("http://localhost:5000/api/users/login", {
+      const response = await axios.post("https://thrift-shop-backend-532l.onrender.com/api/users/login", {
         email,
         password
       });

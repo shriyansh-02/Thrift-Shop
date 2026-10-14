@@ -21,7 +21,7 @@ function Posts({ searchQuery = "", selectedCategory = "ALL", showMyAds = false, 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/posts');
+        const response = await axios.get('https://thrift-shop-backend-532l.onrender.com/api/posts');
         setPosts(response.data);
       } catch (error) {
         console.error('Error fetching posts:', error);
